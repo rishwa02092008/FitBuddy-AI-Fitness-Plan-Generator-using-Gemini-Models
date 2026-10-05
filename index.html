@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">⚡</span> FitBuddy <b>AI</b></div>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#workout">Workout</a>
+      <a href="#nutrition">Nutrition</a>
+      <a href="#assistant">AI Buddy</a>
+    </nav>
+    <button class="profile">RB</button>
+  </header>
+
+  <main>
+    <section id="dashboard" class="hero">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL FITNESS COMPANION</p>
+        <h1>Train smarter.<br><span>Feel stronger.</span></h1>
+        <p class="hero-text">FitBuddy AI creates simple workout and nutrition guidance based on your goals, activity and progress.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#workout">Start Workout</a>
+          <a class="btn ghost" href="#assistant">Ask AI Buddy</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="ring"><strong>72%</strong><small>Weekly Goal</small></div>
+        <div class="mini-stats">
+          <div><b>4</b><span>Workouts</span></div>
+          <div><b>7.2k</b><span>Avg. Steps</span></div>
+          <div><b>2.1L</b><span>Water</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><p class="eyebrow">TODAY</p><h2>Your fitness snapshot</h2></div></div>
+      <div class="stats-grid">
+        <article class="stat"><span>🔥</span><div><b>486</b><small>Calories burned</small></div></article>
+        <article class="stat"><span>🏃</span><div><b>6,842</b><small>Steps today</small></div></article>
+        <article class="stat"><span>💧</span><div><b>1.6 L</b><small>Water intake</small></div></article>
+        <article class="stat"><span>😴</span><div><b>7h 42m</b><small>Sleep last night</small></div></article>
+      </div>
+    </section>
+
+    <section id="workout" class="section two-col">
+      <div>
+        <p class="eyebrow">PERSONALIZED</p>
+        <h2>Today's workout</h2>
+        <p class="muted">A balanced beginner-friendly session. Complete each exercise and mark it done.</p>
+        <div id="workoutList" class="workout-list"></div>
+      </div>
+      <aside class="side-card">
+        <h3>Quick AI recommendation</h3>
+        <p id="recommendation">Based on your activity, keep today's workout moderate and focus on good form.</p>
+        <button class="btn primary full" onclick="generateRecommendation()">Get New Tip</button>
+      </aside>
+    </section>
+
+    <section id="nutrition" class="section">
+      <p class="eyebrow">NUTRITION</p>
+      <h2>Simple meal guide</h2>
+      <div class="meal-grid">
+        <article class="meal"><span>🌅</span><div><h3>Breakfast</h3><p>Oats + banana + 2 eggs</p><small>~420 kcal</small></div></article>
+        <article class="meal"><span>☀️</span><div><h3>Lunch</h3><p>Rice + dal + vegetables + curd</p><small>~600 kcal</small></div></article>
+        <article class="meal"><span>🌙</span><div><h3>Dinner</h3><p>Chapati + paneer/chicken + salad</p><small>~500 kcal</small></div></article>
+      </div>
+    </section>
+
+    <section id="assistant" class="section assistant">
+      <div class="assistant-head">
+        <div><p class="eyebrow">FITBUDDY AI</p><h2>Ask your fitness buddy</h2></div>
+        <span class="online">● Online</span>
+      </div>
+      <div id="chat" class="chat">
+        <div class="bubble bot">Hey! 👋 I'm FitBuddy AI. Ask me about workouts, food, hydration or recovery.</div>
+      </div>
+      <div class="chat-input">
+        <input id="question" placeholder="e.g. Give me a 20 minute home workout..." onkeydown="if(event.key==='Enter')askAI()">
+        <button class="btn primary" onclick="askAI()">Send</button>
+      </div>
+      <div class="chips">
+        <button onclick="quickAsk('Give me a home workout')">Home workout</button>
+        <button onclick="quickAsk('What should I eat after workout?')">Post-workout food</button>
+        <button onclick="quickAsk('How much water should I drink?')">Hydration</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>FitBuddy AI • College Project Demo • Stay active, stay consistent 💪</footer>
+  <script src="script.js"></script>
+</body>
+</html>
